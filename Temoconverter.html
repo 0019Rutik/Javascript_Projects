@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+    <style>
+        body{
+            padding: 100px 50px;
+            
+        }
+        h1{
+            text-align: center;
+        }
+        #container{
+            text-align: center;
+            background-color: #19fc7f;
+            padding: 70px;
+            /* display: flex;
+            justify-content: space-between; */
+        
+        }
+
+       .input-div{
+         display: inline-block;
+     }
+      .inp{
+         padding: 3px 9px;
+         margin: 10px;
+         font-size: 25px;
+         font-weight: bold;
+         width: 250px;
+         text-align: center;
+     } 
+    label{
+        font-size: 22px;
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+</head>
+<body>
+
+ <h1>Temperature Converter</h1>
+
+ <div id="container">
+     <div class="input-div">
+         <label >Celsius:</label>
+         <input type="number" value="0" id="cel" class="inp">
+     </div>
+     
+     <div class="input-div">
+         <label >Fahrenheit:</label>
+        <input type="number" value="32" id="fah" class="inp">
+    </div>
+
+ </div>
+
+
+
+ <script>
+
+   var cel = document.getElementById("cel");
+
+   var fah = document.getElementById("fah");
+
+   cel.addEventListener("input",function(e) {
+      // console.log("button on ceisius");
+      let c = this.value;
+       let f = (c * 9/5 ) + 32;
+       
+       if(!Number.isInteger(f)){
+           f = f.toFixed(4);
+       }
+       fah.value = f;
+       e.preventDefault();
+   });
+   
+   fah.addEventListener("input",function(e) {
+       console.log("button on farhanite");
+       let f = this.value;
+       let c = (f - 32) * 5/9;
+       if(!Number.isInteger(c)){
+           c = c.toFixed(4);
+       }
+
+       cel.value = c;
+   });
+
+
+
+
+
+
+ </script>
+
+
+
+
+
+
+
+    
+</body>
+</html>
+
+
